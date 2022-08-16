@@ -14,6 +14,8 @@ const ListCardOrders:FC<ListCardOrdersI> = ({orders}) => {
                     text={order.text}
                     views={order.views}
                     from_id={order.from_id}
+                    attachments={order.attachments}
+                    date={order.date}
                     />
         })}
     </div>

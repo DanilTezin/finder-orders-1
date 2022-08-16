@@ -10,7 +10,8 @@ const PostFromVk = require('../models/PostFromVK')
 
 
 router.get('/vk/get', (req, res) =>{
-
+    res.header("Access-Control-Allow-Origin", "*");
+    
     PostFromVk.find({}, (err: mongoose.Error, arr: Array<IVkPost>) =>{
         if(err){
             res.status(400)      
@@ -23,9 +24,8 @@ router.get('/vk/get', (req, res) =>{
 
 //Get from all groups last 100 posts who includes our keyword
 router.post('/vk/search', async (req: express.Request, res: express.Response) =>{
-
-    
     res.header("Access-Control-Allow-Origin", "*");
+
     let groups:   Array<string> = req.body.groups
     let keywords: Array<string> = req.body.keywords
 

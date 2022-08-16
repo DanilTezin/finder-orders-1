@@ -5,7 +5,19 @@
     justify-content: center;
     width: fit-content;
     height: fit-content;
-    padding: 10px 10px;
-    margin: 10px 10px;
+    padding: 15px 15px;
+    margin: 15px 15px;
     background-color: rgb(228, 228, 228);
+}
+.title{
+    font-weight: 600;
+    font-size: larger;
+    margin: 5px 0;
+}
+.views, .date{
+    margin: 15px 0;
+    font-size: smaller;
+}
+.date{
+    margin: 10px 0;
 }

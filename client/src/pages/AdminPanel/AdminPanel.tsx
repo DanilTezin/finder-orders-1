@@ -11,13 +11,15 @@ const AdminPanel = () => {
     const [keywords, setKeywords] = useState<Array<string>>([])
     const [groups, setGroups] = useState<Array<string>>([])
     const [orders, setOrders] = useState<Array<CardOrderI>>([])
-
+    const [isLoading, setIsLoading] = useState<Boolean>(true)
+    const [statusLoading, setStatusLoading] = useState<Boolean>(false)
+    
     const removeKeyword = (item :number, setter:any) =>{
         setter((oldKeywords: Array<string>) => oldKeywords.filter((e, index)  => index !== item))
     }
     const getModifyKeyword = (value:string) =>{
-        if(value.length > 21){
-            return value.split('').splice(0, 18).join('') + '...'
+        if(value.length > 10){
+            return value.split('').splice(0, 10).join('') + '...'
         }
         return value
     }
@@ -60,21 +62,26 @@ const AdminPanel = () => {
                             })}
                         </div>
                         <Button onClick={() => {
-                        vkSearch(keywords, groups).then(data =>{
-                            console.log(data.data.data)
-                            setOrders(data.data.data)
-                        })
-                    }}>
+                            setIsLoading(false)
+                            vkSearch(keywords, groups).then(data =>{
+                                setOrders(data.data.data)
+                                data.data.data.length > 0 ? setStatusLoading(true) : setStatusLoading(false)
+                                setIsLoading(true)
+                            })
+                        }}>
                         START
                     </Button>   
                     </div>
                     
                 </div>
-        
-                
 
             </div>
-            <ListCardOrders orders={orders}/>
+            {isLoading && statusLoading  ? <ListCardOrders orders={orders}/> 
+            :!statusLoading 
+                ? <div className={styles.statusOfLoading}>Записи не найдена</div>
+                : null
+            } 
+            {!isLoading ? <div className={styles.statusOfLoading}>Загрузка...</div>: null}
         </div>
        
   )
