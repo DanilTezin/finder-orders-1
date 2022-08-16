@@ -1,0 +1,36 @@
+.keywords{
+    margin-top: 30px;
+    display: flex;
+    width: 80%;
+    height: 200px;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 5px;
+}
+.addKeyword{
+    margin-top: 20px;
+}
+.container{
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.keywords > span{
+    background-color: rgb(255, 156, 156);
+    min-width: 180px;
+    max-width: 180px;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.panel{
+    height: 100vh;
+}

@@ -1,0 +1,3 @@
+.my-session
+node_modules/
+.env

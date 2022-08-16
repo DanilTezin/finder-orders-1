@@ -1,0 +1,25 @@
+
+.container{
+    display: flex;
+    gap: 5px;
+}
+
+.container input{
+    border: 1px solid rgb(187, 187, 187);
+    border-radius:2px;
+    height: 30px;
+    padding: 0 15px;
+    outline: none;
+}
+.container button{
+    height: 30px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(36, 124, 255);
+    border: 1px solid rgb(177, 177, 177);
+    padding: 0 10px;
+    border-radius: 0 10px 10px 0px;
+}
+.container button:disabled{
+    background-color: rgb(120, 164, 231);
+}

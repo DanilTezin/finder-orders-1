@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 238, 238);
+    text-align: center;
+    align-items: center;
+    gap: 50%;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.nav > a{
+    text-decoration: none;
+    color: rgb(35, 110, 230);
+}
