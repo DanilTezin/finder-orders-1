@@ -18,10 +18,9 @@ const AdminPanel = () => {
         setter((oldKeywords: Array<string>) => oldKeywords.filter((e, index)  => index !== item))
     }
     const getModifyKeyword = (value:string) =>{
-        if(value.length > 10){
-            return value.split('').splice(0, 10).join('') + '...'
-        }
-        return value
+        
+        value.length > 10 && return value.split('').splice(0, 10).join('') + '...'
+
     }
         
     return (
